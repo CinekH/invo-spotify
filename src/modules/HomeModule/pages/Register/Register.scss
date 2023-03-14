@@ -1,9 +1,352 @@
+@import "../../../../global-styles/style.scss";
+
 .register {
     display: flex;
     flex-direction: column;
+    padding: 50px 0;
 
-    &__form {
+    & &__title {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    & &__button {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        height: 57px;
+        border-radius: $rounding;
+        border: none;
+        cursor: pointer;
+
+        &--facebook {
+            margin-top: 50px;
+            background: $colorFacebook;
+            color: $colorWhite;
+        }
+
+        &--google {
+            margin-top: 18px;
+            background: $colorWhite;
+            border: $stroke solid $colorBlackLighten;
+            color: $colorBlackLighten;
+        }
+    }
+
+    & &__icon-container {
+        height: 27px;
+        width: 27px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background: $colorWhite;
+    }
+
+    & &__icon {
+        height: 22px;
+
+        &--facebook {
+            translate: -1px 0px;
+        }
+    }
+
+    & &__spacer {
+        justify-content: center;
+        text-align: center;
+        margin-top: 32px;
+        color: #929292;
+        position: relative;
+        overflow: hidden;
+
+        &::before,
+        &::after {
+            content: "";
+            width: 42%;
+            height: $stroke;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            background: #929292;
+        }
+
+        &::after {
+            left: 58%;
+        }
+    }
+
+    & &__sign-up {
+        margin-top: 32px;
+        margin-bottom: 0px;
+        text-align: center;
+    }
+
+    & &__form {
         display: flex;
         flex-direction: column;
     }
+
+    & &__group {
+        display: flex;
+        flex-direction: column;
+    }
+
+    & &__error {
+        color: $colorError;
+        margin-top: 10px;
+        font-size: 14px;
+        display: grid;
+        align-items: center;
+        grid-template-columns: min-content 1fr;
+
+        svg {
+            margin-right: 8px;
+            width: 13px;
+        }
+    }
+
+    & &__input {
+        &--text {
+            padding: 20px 32px;
+            border-radius: $rounding;
+            border: $stroke solid $colorBlackLighten;
+        }
+
+        &[aria-invalid="true"] {
+            border-color: $colorError;
+        }
+    }
+
+    & &__label {
+        margin-top: 32px;
+        margin-bottom: 16px;
+    }
+
+    & &__date {
+        border: none;
+        display: grid;
+        grid-template-columns: 189px 112px 119px;
+        grid-template-rows: repeat(3, auto);
+        padding: 0;
+        gap: 10px;
+    }
+
+    & &__date-title {
+        grid-column: 1 / 4;
+        grid-row: 1;
+        display: block;
+        height: min-content;
+        margin-bottom: 6px;
+    }
+
+    & &__month {
+        grid-column: 1;
+        grid-row: 3;
+        background: transparent;
+        border: $stroke solid $colorBlackLighten;
+        border-radius: $rounding;
+        padding: 0 32px;
+        appearance: none;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+        background-repeat: no-repeat;
+        background-position: right 32px center;
+        background-size: 1em;
+        color: #888888;
+
+        option {
+            background: white;
+            color: $colorBlack;
+        }
+        
+        &[data-selected="true"] {
+            color: $colorBlack;
+        }
+    }
+
+    & &__month-label,
+    & &__day-label,
+    & &__year-label {
+        grid-row: 2;
+    }
+
+    & &__day {
+        grid-column: 2;
+        grid-row: 3;
+        width: 110px;
+        box-sizing: border-box;
+        justify-self: end;
+    }
+
+    & &__year {
+        grid-column: 3;
+        grid-row: 3;
+        width: 117px;
+        box-sizing: border-box;
+        justify-self: end;
+    }
+
+    & &__gender {
+        display: grid;
+        grid-template-columns: min-content 1fr min-content 1fr min-content max-content min-content 1fr;
+        grid-template-rows: repeat(3, min-content);
+        gap: 16px;
+        margin-top: 32px;
+        align-items: center;
+    }
+
+    & &__gender-title {
+        grid-column: 1 / -1;
+        padding: 0;
+        margin: 0;
+        height: min-content;
+    }
+
+    & &__male-label {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    & &__male {
+        grid-column: 1;
+        grid-row: 2;
+        width: 20px;
+        height: 20px;
+    }
+
+    & &__female-label {
+        grid-column: 4;
+        grid-row: 2;
+    }
+
+    & &__female {
+        grid-column: 3;
+        grid-row: 2;
+        width: 20px;
+        height: 20px;
+    }
+
+    & &__non-binary-label {
+        grid-column: 6;
+        grid-row: 2;
+    }
+
+    & &__non-binary {
+        grid-column: 5;
+        grid-row: 2;
+        width: 20px;
+        height: 20px;
+        white-space: nowrap;
+    }
+
+    & &__other-label {
+        grid-column: 8;
+        grid-row: 2;
+    }
+
+    & &__other {
+        grid-column: 7;
+        grid-row: 2;
+        width: 20px;
+        height: 20px;
+    }
+
+    & &__prefer-label {
+        grid-column: 2 / -1;
+        grid-row: 3;
+    }
+
+    & &__prefer {
+        grid-column: 1;
+        grid-row: 3;
+        width: 20px;
+        height: 20px;
+    }
+
+    & &__share {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 18px;
+        margin-top: 30px;
+        height: 34px;
+        align-items: center;
+    }
+
+    & &__checkbox {
+        width: 24.55px;
+        height: 20px;
+        border-radius: 5px;
+        appearance: none;
+        -webkit-appearance: none;
+        border: $stroke solid $colorWhiteDarker;
+        cursor: pointer;
+
+        &:checked {
+            background: $colorPrimary;
+            border-color: $colorPrimary;
+            background-image: url('./check.svg');
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+    }
+
+    & &__info {
+        font-size: 13px;
+        margin: 32px 0 0 0;
+        text-align: center;
+
+        a {
+            color: $colorPrimary;
+        }
+    }
+
+    & &__submit {
+        width: 173px;
+        height: 55px;
+        border-radius: $rounding;
+        border: none;
+        background: $colorPrimary;
+        margin-top: 32px;
+        align-self: center;
+    }
+
+    & &__login {
+        text-align: center;
+        margin-top: 32px;
+
+        a {
+            color: $colorPrimary;
+        }
+    }
+
+    fieldset {
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    input {
+        &[type="radio"] {
+            appearance: none;
+            aspect-ratio: 1;
+            border: $stroke solid $colorWhiteDarker;
+            border-radius: 50%;
+            cursor: pointer;
+            box-sizing: border-box;
+
+            &:hover {
+                border-color: $colorPrimary;
+            }
+
+            &:checked {
+                border-color: $colorPrimary;
+                border-width: 5px;
+            }
+        }
+    }
+}
+
+.center {
+    align-self: center;
 }

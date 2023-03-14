@@ -2,6 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import { fileURLToPath, URL } from "node:url";
 import eslint from 'vite-plugin-eslint';
+import svgr from "vite-plugin-svgr";
 
 const resolve = {
   alias: {
@@ -15,6 +16,6 @@ export default defineConfig({
   css: {
     devSourcemap: true,
   },
-  plugins: [react(), eslint()],
+  plugins: [react(), eslint(), svgr()],
   resolve,
 });
