@@ -1,0 +1,63 @@
+/// Main Styles File
+/// Here we import all the global Styles files we need for our project.
+
+@import "styles/normalize.scss";
+@import "styles/root.scss";
+@import "styles/fonts.scss";
+
+html {
+  height: 100%;
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    color: $colorBlack;
+    background: $colorWhite;
+    height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+.text-title {
+    font-size: var(--font-size-title);
+    font-weight: 700;
+}
+
+.text-logo {
+    font-size: var(--font-size-logo);
+    font-weight: 900;
+}
+
+.text-large {
+    font-size: var(--font-size-large);
+    font-weight: 700;
+}
+
+.text-big {
+    font-size: var(--font-size-big);
+    font-weight: 700;
+}
+
+.text-regular {
+    font-size: var(--font-size-regular);
+    font-weight: 700;
+}
+
+.text-small {
+    font-size: var(--font-size-small);
+    font-weight: 700;
+}
+
+.text-tiny {
+    font-size: var(--font-size-tiny);
+    font-weight: 400;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 442px;
+  justify-content: center;
+  padding: 50px 0px;
+}
