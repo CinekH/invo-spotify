@@ -25,7 +25,7 @@ export const HomePage: React.FC = () => {
     <div className="home">
       {user !== null ? (
         <>
-          <p className="text-big home__text">Dzień dobry, ${user.email}</p>
+          <p className="text-big home__text">Dzień dobry, {user.email}</p>
           <button className="text-big home__button" onClick={handleClick}>Log out</button>
         </>
       ) : (
