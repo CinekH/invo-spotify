@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, createContext } from 'react';
 import { HomePage, Register, Login } from "@modules";
 import {
   createBrowserRouter,
@@ -23,11 +23,20 @@ const router = createBrowserRouter([
   }
 ])
 
-const App: React.FC = () => (
-  <div className='container'>
-      <LogoGlobalComponent />
-      <RouterProvider router={router} />
-  </div>
-);
+export const GlobalMessage = createContext<any>([]);
+
+const App: React.FC = () => {
+  const [message, setMessage] = useState<string>('')
+
+  return (
+    <div className='container'>
+      <GlobalMessage.Provider value={[message, setMessage]}>
+        <LogoGlobalComponent />
+        <RouterProvider router={router} />
+      </GlobalMessage.Provider>
+    </div>
+  )
+}
+
 
 export default App;

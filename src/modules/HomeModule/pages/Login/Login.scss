@@ -1,0 +1,233 @@
+@import "../../../../global-styles/style.scss";
+
+.login {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0;
+
+    & &__main-error {
+        color: $colorError;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 700;
+    }
+    
+    & &__message {
+        color: $colorPrimary;
+        text-align: center;
+    }
+
+    & &__title {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    & &__button {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: center;
+        height: 57px;
+        border-radius: $rounding;
+        border: none;
+        cursor: pointer;
+
+        &--facebook {
+            margin-top: 18px;
+            background: $colorFacebook;
+            color: $colorWhite;
+            
+            &:hover,
+            &:focus-visible {
+                background: darken($colorFacebook, 10%);
+            }
+
+            &:focus {
+                background: lighten($colorFacebook, 40%);
+            }
+        }
+
+        &--google {
+            margin-top: 18px;
+            background: $colorWhite;
+            border: $stroke solid $colorBlackLighten;
+            color: $colorBlackLighten;
+            text-decoration: none;
+            
+            &:hover,
+            &:focus-visible {
+                border-color: $colorBlack;
+                color: $colorBlack;
+                background-color: darken($colorWhite, 5%);
+            }
+        }
+
+        &--apple {
+            margin-top: 18px;
+            background: #191919;
+            color: $colorWhite;
+
+            &:hover,
+            &:focus-visible {
+                background: #555555;
+            }
+        }
+    }
+
+    & &__icon-container {
+        height: 27px;
+        width: 27px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        background: $colorWhite;
+    }
+
+    & &__icon {
+        height: 22px;
+
+        &--facebook {
+            translate: -1px 0px;
+        }
+    }
+
+    & &__spacer {
+        justify-content: center;
+        text-align: center;
+        margin-top: 32px;
+        color: #929292;
+        position: relative;
+        overflow: hidden;
+
+        &::before,
+        &::after {
+            content: "";
+            width: 42%;
+            height: $stroke;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            background: #929292;
+        }
+
+        &::after {
+            left: 58%;
+        }
+    }
+
+    & &__form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    & &__input {
+        &--text {
+            padding: 20px 32px;
+            border-radius: $rounding;
+            border: $stroke solid $colorBlackLighten;
+        }
+
+        &[data-filled="true"] {
+            border-color: $colorBlack;
+        }
+        
+        &:hover,
+        &:focus-visible {
+            outline: none;
+            border-color: $colorPrimary;
+        }
+
+
+        &[aria-invalid="true"] {
+            border-color: $colorError;
+        }
+    }
+
+    & &__label {
+        margin-top: 32px;
+        margin-bottom: 16px;
+    }
+
+    & &__recovery {
+        color: $colorBlack;
+        margin-top: 16px;
+        margin-bottom: 0;
+
+        &:hover {
+            color: $colorPrimary;
+        }
+    }
+
+    & &__submit-group {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        margin-top: 32px;
+        align-items: flex-start;
+        padding-bottom: 32px;
+        margin-bottom: 32px;
+        border-bottom: $stroke solid $colorWhiteDarker;
+    }
+
+    & &__submit {
+        width: 173px;
+        height: 55px;
+        border-radius: $rounding;
+        border: none;
+        background: $colorPrimary;
+        justify-self: end;
+        cursor: pointer;
+        transition-duration: 300ms;
+
+        &:hover,
+        &:focus-visible {
+            scale: 1.1;
+        }
+
+        
+        &:disabled {
+            cursor: default;
+            scale: 1;
+        }
+    }
+
+    & &__checkbox-container {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: start;
+        gap: 18px;
+        align-items: center;
+    }
+
+    & &__checkbox {
+        width: 20px;
+        height: 20px;
+        border-radius: 5px;
+        appearance: none;
+        -webkit-appearance: none;
+        border: $stroke solid $colorWhiteDarker;
+        cursor: pointer;
+
+        &:checked {
+            background: $colorPrimary;
+            border-color: $colorPrimary;
+            background-image: url("./check.svg");
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+
+        &:hover {
+            border-color: $colorPrimary;
+        }
+    }
+
+    & &__account {
+        margin: 0;
+        text-align: center;
+    }
+
+    & &__sign-up {
+        color: #848484;
+    }
+}

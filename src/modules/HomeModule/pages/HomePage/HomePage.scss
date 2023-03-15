@@ -1,0 +1,41 @@
+@import '../../../../global-styles/style.scss';
+
+.home {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 32px;
+
+    &__text {
+        text-align: center;
+    }
+
+    & &__button {
+        display: flex;
+        color: $colorWhite;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        width: 173px;
+        height: 55px;
+        border-radius: $rounding;
+        border: none;
+        background: $colorPrimary;
+        margin-top: 32px;
+        align-self: center;
+        cursor: pointer;
+        transition-duration: 300ms;
+
+        &:hover,
+        &:focus-visible {
+            scale: 1.1;
+        }
+
+        
+        &:disabled {
+            cursor: default;
+            scale: 1;
+        }
+    }
+}

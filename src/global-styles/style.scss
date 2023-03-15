@@ -60,4 +60,8 @@ body {
   grid-template-columns: 442px;
   justify-content: center;
   padding: 50px 0px;
+
+  @media screen and (max-width: 481px) {
+    grid-template-columns: 90%;
+  }
 }
